@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    height: 75px;
+    background-color: rgb(245, 84, 26);
+}
+
+.title {
+    float: left;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: #ffffff;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.userName {
+    float: right;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #ffffff;
+    padding: 25px;
+    padding-right: 20px;
+}
+
+.fromAdminTitle {
+    width: auto;
+    margin-top: 35px;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.jpnMessage {
+    width: 315px;
+    padding-top: 4px;
+    padding-right: 87px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    border-bottom: 2px solid rgb(245, 84, 26);
+}
+
+.parts-setting {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.input-font {
+    width: auto;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    padding-bottom: 3px;
+}
+
+.input-name {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+
+.input-text {
+    width: 100%;
+    height: 100px;
+    max-width: 300px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+
+.input-submit {
+    border: none;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
