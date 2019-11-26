@@ -20,9 +20,8 @@ try {
     $prepare->execute();
     $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
-    //print_r($result);　$resultの中身を全て表示
-    echo '<br>';
-
+    //print_r($result);　// デバッグコマンド：$resultの中身を全て表示
+    
     //ViewAllLogs($result); //テーブルの内容を全表示
 
 } catch(PDOException $e) {
@@ -31,6 +30,10 @@ try {
 
 function ViewAllLogs($bbslogs){
     $num = 0;
+    do {
+        $num++;
+    } while(isset($bbslogs[$num]['id']));
+    $num--;
     // print_r($bbslogs);
     do {
         echo '<div class="loglist">';
@@ -38,7 +41,7 @@ function ViewAllLogs($bbslogs){
         echo '<p class="your-text">'.$bbslogs[$num]['text'].'<p>';
         echo '<p class="write-date">'.$bbslogs[$num]['writetime'].'<p>';
         echo '</div>';
-        $num++;
+        $num--;
     } while(isset($bbslogs[$num]['id']));
 }
 
