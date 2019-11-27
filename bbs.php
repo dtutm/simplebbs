@@ -8,7 +8,7 @@ if(!isset($_SESSION['userID'])){
 }
 
 require_once('bbs_result.php');
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 ?>
 
