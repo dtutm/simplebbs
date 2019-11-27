@@ -1,9 +1,17 @@
 <?php
-// phpinfo();
-//echo 'やるじゃない';
+session_start();
+
+//未ログインの状態の場合はログインページへ強制移動
+if(!isset($_SESSION['userID'])){
+    header("Location: ./index.php");
+    exit;
+}
+
 require_once('bbs_result.php');
+var_dump($_SESSION);
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -15,8 +23,9 @@ require_once('bbs_result.php');
 
     <body>
         <div class="header">
-            <div class="title">SimpleBBS</div>
-            <div class="userName">ようこそ user さん</div>
+            <p class="title">SimpleBBS</p>
+            <p class="userName">ようこそ <?php echo $_SESSION['userID'] ?> さん</p>
+            <a href="logout.php"><p class="logout">[ログアウトする]</p></a>
         </div>
 
         <div class="inputArea">
@@ -27,10 +36,17 @@ require_once('bbs_result.php');
                 </div>
 
                 <div class="parts-setting">
+                    <!-- 入力の不備に関するエラーメッセージ -->
+                    <?php
+                    if(isset($_SESSION['noticeMessage'])){
+                        echo '<p class="error-message">'.$_SESSION['noticeMessage'].'</p>';
+                        $_SESSION['noticeMessage'] = null;
+                    }
+                    ?>
                     <p class="input-font">name.</p>
                     <input class="input-name" type="name" name="yourName">
                     <p class="input-font">message.</p>
-                    <input class="input-text" type="text" name="yourText">
+                    <textarea class="input-text" name="yourText"></textarea>
                     <input class="input-submit" type="submit" value="send" name="textSend">
                 </div>
 
@@ -44,15 +60,6 @@ require_once('bbs_result.php');
         
         <!-- ここから書き込みを反映 -->
         <?php ViewAllLogs($result) ?>
-
-        <!--
-        <div class="loglist">
-            <p class="your-name">しおやなぎ</p>
-            <p class="your-text">初投稿です、よろしくお願いします！</p>
-            <p class="write-date">2019-11-20 21:48:08</p>
-        </div>
-        -->
-    
 
     </body>
 </html>

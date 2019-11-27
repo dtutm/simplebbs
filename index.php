@@ -1,5 +1,6 @@
 <?php 
 session_start();
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -29,12 +30,11 @@ session_start();
         </p>
         <p class="error-message">
         <?php
-            //var_dump($_SESSION['errorFlag']); 
-            if($_SESSION['errorFlag'] == false) { 
+            // エラーメッセージの表示
+            if($_SESSION['errorFlag'] == 1) { 
                 echo 'ログインID、またはパスワードが違います。'; 
-                $_SESSION['errorFlag'] = true;
+                $_SESSION['errorFlag'] = 0;
             }
-            //var_dump($_SESSION['errorFlag']);
         ?>
         </p>
         <input type="submit" value="ログイン" name="loginStart">
